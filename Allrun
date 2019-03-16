@@ -1,0 +1,15 @@
+#!/bin/sh
+
+foamListTimes -rm
+rm -r 0
+
+blockMesh
+
+setSet -batch ./system/setSet
+createPatch -overwrite -dict ./system/createPatchDict
+
+cp -r 0.orig 0
+
+setFields
+twoPhaseEulerFoam
+

@@ -1,0 +1,2 @@
+faceSet inletSet new boxToFace ( 0.2 -0.05 9.99 )( 1 1.05 10.01 )
+faceSet outletSet new boxToFace ( 11.975 -0.05 1 )( 12.05 1.05 2 )
