@@ -20,17 +20,34 @@ internalField       uniform 1e5;
 
 boundaryField
 {
+
+    diffuser
+    {
+        type            fixedFluxPressure;
+        value           $internalField;
+    }
+
     inlet
     {
         type            fixedFluxPressure;
         value           $internalField;
     }
-    
+
     outlet
     {
-        type            totalPressure;
-        p0              uniform 188290;
+        type            pulseFixedValue;
+        period          80;
+        duration        0.4;
+        pulseValue      4905;
+        baseValue       198100;
+        value           uniform 198100;
     }
+
+    /*outlet
+    {
+        type            pressure;
+        p              uniform 188290;
+    }*/
 
     atmosphere
     {

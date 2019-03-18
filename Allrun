@@ -1,9 +1,11 @@
 #!/bin/sh
 
+rm -r pro*
 foamListTimes -rm
 rm -r 0
 
 blockMesh
+snappyHexMesh -overwrite
 
 setSet -batch ./system/setSet
 createPatch -overwrite -dict ./system/createPatchDict
@@ -11,5 +13,8 @@ createPatch -overwrite -dict ./system/createPatchDict
 cp -r 0.orig 0
 
 setFields
-twoPhaseEulerFoam
+
+#decomposePar
+
+#mpirun -np 4 twoPhaseEulerFoam -parallel
 

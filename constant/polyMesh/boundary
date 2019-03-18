@@ -15,39 +15,45 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-5
+6
 (
     atmosphere
     {
         type            patch;
-        nFaces          120;
-        startFace       13340;
+        nFaces          600;
+        startFace       93880;
     }
     wall
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          382;
-        startFace       13460;
+        nFaces          1910;
+        startFace       94480;
     }
     defaultFaces
     {
         type            empty;
         inGroups        1(empty);
         nFaces          13600;
-        startFace       13842;
+        startFace       96390;
+    }
+    diffuser
+    {
+        type            patch;
+        nFaces          16;
+        startFace       109990;
     }
     inlet
     {
         type            patch;
-        nFaces          8;
-        startFace       27442;
+        nFaces          40;
+        startFace       110006;
     }
     outlet
     {
         type            patch;
-        nFaces          10;
-        startFace       27450;
+        nFaces          50;
+        startFace       110046;
     }
 )
 

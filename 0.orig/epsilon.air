@@ -20,6 +20,13 @@ internalField   uniform 1.5e-4;
 
 boundaryField
 {
+    
+    diffuser
+    {
+        type            fixedValue;
+        value           $internalField;
+    }
+    
     inlet
     {
         type            fixedValue;

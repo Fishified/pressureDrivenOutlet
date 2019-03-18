@@ -27,6 +27,12 @@ internalField   uniform 0;
 
 boundaryField
 {
+    diffuser
+    {
+        type            fixedValue;
+        value           uniform 1;
+    } 
+    
     inlet
     {
         type            fixedValue;

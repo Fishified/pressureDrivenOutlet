@@ -15,6 +15,11 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
+libs
+(
+    "libpulseFixedValue.so"
+);
+
 application     twoPhaseEulerFoam;
 
 startFrom       latestTime;
@@ -23,13 +28,13 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         60;
+endTime         240;
 
 deltaT          2e-4;
 
 writeControl    adjustableRunTime;
 
-writeInterval   1;
+writeInterval   0.5;
 
 purgeWrite      0;
 
